@@ -4,6 +4,8 @@ npm-debug.log
 yarn-error.log
 package-lock.json
 
+.txt
+
 # Logs
 logs
 *.log
