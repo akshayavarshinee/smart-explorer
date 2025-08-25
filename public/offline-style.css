@@ -1,0 +1,87 @@
+body.offline-view{
+    width: 99vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #f8fafc;
+}
+
+.offline-container {
+    width: 95vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: 10px;
+    background-color: white;
+    padding: 1.5rem;
+    max-width: 60%;
+    width: 60%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.trip{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: solid 0.1px #dfe0e0;
+    border-radius: 10px;
+}
+
+.trip div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.trip:hover{
+    background-color: #ccfbf1;
+}
+
+.download_map, .save_itinerary{
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.download_map{
+    background-color: #10877d;
+    color: white;
+}
+
+.save_itinerary{
+    color: #0f766e;
+    background-color: white;
+}
+
+button[class="download_map"]:hover{
+    background-color: #0f766e;
+}
+
+button[class="save_itinerary"]:hover{
+    background-color: #dfe0e0;
+    color: black;
+}
+
+.trip-name{
+    font-size: 14px;
+}
+
+.calendar{
+  height: 30px;
+  width:30px;
+}

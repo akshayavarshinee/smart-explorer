@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="./style.css" rel = "stylesheet">
+</head>
+<body class="auth-page">
+    <div class = "container">
+        <div>
+            <h2 class = "product-name ubuntu-bold"><img id = "product-logo" src="./images/compass.png"> Smart Explorer</h2>
+            <h2 class = "ubuntu-medium">Welcome Back</h2>
+            <p class="ubuntu-light" style = "font-size: 14px;">Log in to continue with your adventure</p>
+        </div>
+        <p class="errors"><% if (error && error.length > 0) { %>
+                <%= error[0] %>
+                <% } %>
+        </p>
+        <form action="/log-in" method = "POST">
+            <label class = "ubuntu-medium" for="email" style = "font-size: 13px;">Email</label>
+            <input type = "text" name = "email" placeholder="Enter your email" autofocus autocomplete="off">
+
+            <label class = "ubuntu-medium"for="password" style = "font-size: 13px;">Password</label>
+            <input type = "password" name = "password" placeholder="Enter your password">
+
+            
+            <button class = "ubuntu-medium" type = "submit" class = "submit">Log In</button>
+        </form>
+        <p style = "font-size: 12px; text-align: center;" class = "ubuntu-light">or</p>
+        <button class = "google-sign-in"><img id = "google-logo" src = "./images/google-logo.png"> Continue with Google</button>
+        <a class = "switch ubuntu-light" href = "/sign-up" class = "ubuntu-light">Don't have an account? Sign up</a>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+     -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/offline-style.css">
+    <link rel="stylesheet" href="/header-footer.css"> 
+    <title>Smart Explorer</title>
+</head>
+
+<body class="offline-view">
+    <%- include("partials/header.ejs") %>
+    <div class="offline-container">
+        <h1 class="ubuntu-bold">Offline View</h1>
+        <section class="card">
+            <h4 class="ubuntu-medium">Current Trip</h4>
+            <div class = "trip">
+                <div>
+                    <img class="calendar" src="/images/calendar.png">
+                    <div class = "ubuntu-medium trip-name" >test</div>
+                </div>    
+                <div>
+                    <button class="download_map">Download Map</button>
+                    <button class="save_itinerary">Save Itinerary</button>  
+                </div>               
+            </div>
+        </section>
+        <section class="card">
+            <h4 class="ubuntu-medium">Previous Trips</h4>
+            <div class = "trip">
+                <div>
+                    <img class="calendar" src="/images/calendar.png">
+                    <div class = "ubuntu-medium trip-name" >test</div>
+                </div>    
+                <div>
+                    <button class="download_map">Download Map</button>
+                    <button class="save_itinerary">Save Itinerary</button>  
+                </div>               
+            </div>
+
+            <div class = "trip">
+                <div>
+                    <img class="calendar" src="/images/calendar.png">
+                    <div class = "ubuntu-medium trip-name" >test</div>
+                </div>    
+                <div>
+                    <button class="download_map">Download Map</button>
+                    <button class="save_itinerary">Save Itinerary</button>  
+                </div>               
+            </div>
+        </section>
+    </div>
+    <br/>
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

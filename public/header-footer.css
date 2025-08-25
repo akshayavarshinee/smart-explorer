@@ -1,0 +1,71 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    /* padding: 1rem; */
+    height: 70px;
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-links a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.product-name{
+    color: #0f766e;
+}
+
+#product-logo{
+    height: 25px;
+    width: 25px;
+    position:relative;
+    top: 3px;
+}
+
+footer {
+    background-color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    border-top: 1px solid #e5e7eb;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+footer .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+footer .menu li a {
+  font-size: 14px;
+    text-decoration: none;
+    color: #333;
+}
+
+footer .copyright {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.nav-links .nav-item {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 7px 12px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.nav-links .nav-item:hover {
+    background-color: #ccfbf1; /* your mint hover */
+}

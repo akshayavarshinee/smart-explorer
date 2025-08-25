@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "/style.css">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/header-footer.css">
+    <title>Smart Explorer</title>
+</head>
+<body class="home">
+    <%- include("partials/header.ejs") %>
+
+        <main>
+        <section class="welcome">
+            <h2>Welcome back, Travel Explorer!</h2>
+            <p>Ready to plan your next adventure?</p>
+        </section>
+
+        <section class="action-buttons">
+            <a href="/plan">
+                <div class="card">
+                    <img class="icon" src="/images/calendar.png" alt="calendar">
+                    <div>
+                        <h3>Plan My Vacation</h3>
+                        <p>Start planning your perfect trip</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="/group">
+                <div class="card">
+                    <img class="icon" src="/images/team.png" style="width:37px;" alt="group">
+                    <div>
+                        <h3>Group Planning</h3>
+                        <p>Plan trips with friends</p>
+                    </div>
+                </div>
+            </a>
+            
+
+            <a href="/offline">
+                <div class = "card">
+                    <img class="icon" src="/images/team.png" style="width:37px;" alt="group">
+                    <div>
+                        <h3>Offline Mode</h3>
+                        <p>Download your map</p>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <section class="interests">
+            <h3>Your Travel Interests</h3>
+            <p>Select your interests to get personalized recommendations</p>
+            <div class="checkbox-grid">
+                <label><input type="checkbox"> Food & Dining</label>
+                <label><input type="checkbox"> Nature & Parks</label>
+                <label><input type="checkbox"> History & Culture</label>
+                <label><input type="checkbox"> Museums</label>
+                <label><input type="checkbox"> Shopping</label>
+                <label><input type="checkbox"> Nightlife</label>
+                <label><input type="checkbox"> Adventure Sports</label>
+                <label><input type="checkbox"> Photography</label>
+                <label><input type="checkbox"> Architecture</label>
+                <label><input type="checkbox"> Local Markets</label>
+                <label><input type="checkbox"> Art Galleries</label>
+                <label><input type="checkbox"> Music & Entertainment</label>
+            </div>
+            <button class="plan-btn"><a href="/plan">Plan My Vacation</a></button>
+        </section>
+    </main>
+
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

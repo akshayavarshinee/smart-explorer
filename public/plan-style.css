@@ -1,0 +1,149 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+  margin: 0;
+  padding: 0;
+  color: #1e293b;
+}
+
+/* header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  background-color: white;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+header h1 {
+  font-size: 1.2rem;
+  margin: 0;
+} */
+
+.back-btn {
+  text-decoration: none;
+  color: #0a8c7e;
+  font-size: 1rem;
+}
+
+main {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background-color: white;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="date"] {
+  align-items: center;
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.date-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.date-container div {
+  flex: 1 1 150px;
+  min-width: 150px;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.slider {
+  width: 100%;
+  accent-color: #0a8c7e;
+  height: 8px;
+  background: #ddfcf5;
+  border-radius: 4px;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+input[name="custom-interest"]{
+  border: 1px solid #0f766e;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags input[type="button"], .tags button {
+  padding: 6px 12px;
+  border: 1px solid #0f766e;
+  border-radius: 20px;
+  background-color: #ddfcf5;
+  color: #0f766e;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tags button:hover {
+  background-color: #b6f0e6;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancel {
+  background-color: #e2e8f0;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.generate {
+  background-color: #0a8c7e;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.generate:hover {
+  background-color: #087368;
+}
+

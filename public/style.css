@@ -1,0 +1,193 @@
+.ubuntu-light {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ubuntu-medium {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ubuntu-bold {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ubuntu-light-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ubuntu-regular-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ubuntu-medium-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ubuntu-bold-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* body{
+    background-color: #ddfcf5;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    height: 95vh;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* Only apply this layout to login, signup, and index pages */
+body.auth-page{
+  background-color: #ddfcf5;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+body.home {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #f8fafc;
+  color: #333;
+}
+
+p{
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+
+.google-sign-in{
+    border: solid 0.1px #dfe0e0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.container{
+    background-color: white;
+    width: 350px;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container div{
+    text-align: center;
+}
+
+label{
+  margin-bottom: 0;
+}
+
+input[type = "text"], input[type = "password"]{
+    border: none;
+    background-color: #eff2f7;
+    padding: 10px;
+    margin-top: 0;
+    border-radius: 5px;
+}
+
+button[type = "submit"]{
+    border: none;
+    padding: 10px;
+    color: white;
+    background-color: #10877d;
+    border-radius: 5px;
+}
+
+button[type = "submit"]:hover{
+    background-color: #0c6059;
+}
+
+button[class = "google-sign-in"]:hover{
+    background-color: #dfe0e0;;
+}
+
+.product-name{
+    color: #0f766e;
+}
+
+#product-logo{
+    height: 25px;
+    width: 25px;
+    position:relative;
+    top: 3px;
+}
+
+#google-logo{
+  height: 15px;
+  width: 15px;
+  position: relative;
+  top: 3px;
+}
+
+a{
+	text-decoration: none;
+}
+
+.switch{
+    color:#0f766e;
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center;
+}
+
+.icon{
+  height: 30px;
+  width: 30px;
+  position: relative;
+  top: 3px;
+}
+
+@media (max-width: 500px){
+  .container{
+    width: 300px;
+  }
+}
+
+.errors{
+  font-size: 11px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(187, 8, 8);
+  margin: 0px;
+  text-align: center;
+}
+
+
+
+
+

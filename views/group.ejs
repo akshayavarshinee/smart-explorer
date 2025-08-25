@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Explorer - Group Planning</title>
+
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet"> -->
+  
+  <link rel="stylesheet" href="/group-style.css">
+  <link rel="stylesheet" href="/header-footer.css">
+</head>
+<body class="offline-view">
+  <%- include("partials/header.ejs") %>
+
+  <main class="container">
+    <!-- Invite Friends -->
+    <section class="card">
+      <h3>Invite Friends</h3>
+      <form action="/invite" method = "post" class="invite">
+        <div>
+			<input type="email" placeholder="friend@email.com" name = "email" required>
+        	<button type="submit" class="btn btn-primary">Send</button>
+		</div>
+		
+		<div class="invite-message">
+			<% if (typeof message !== "undefined" && message) { %>
+				<p><%= message %></p>
+			<% } %>
+		</div>
+
+      </form>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section class="card">
+      <nav class="tabs">
+        <button class="tab tab--active">Day 1</button>
+        <button class="tab">Day 2</button>
+        <button class="tab">Day 3</button>
+      </nav>
+
+      <h4>Day 1 Itinerary</h4>
+      <p class="sub-text">Drag to reorder, click to vote</p>
+
+      <ul class="itinerary">
+        <li class="itinerary__item">
+          <div class="itinerary__details">
+            <strong>Local Art Museum</strong>
+            <span class="tag">Museums</span>
+            <span class="added-by">Added by You</span>
+          </div>
+          <div class="actions">
+            <button class="vote-btn">👍</button>
+            <button class="delete-btn">🗑</button>
+          </div>
+        </li>
+
+        <li class="itinerary__item">
+          <div class="itinerary__details">
+            <strong>Central Park Gardens</strong>
+            <span class="tag">Nature & Parks</span>
+            <span class="added-by">Added by Mike</span>
+          </div>
+          <div class="actions">
+            <button class="vote-btn vote-btn--inactive">👍</button>
+            <button class="delete-btn">🗑</button>
+          </div>
+        </li>
+      </ul>
+
+      <button class="btn btn-link">+ Add More Places</button>
+    </section>
+
+    <!-- Bottom Buttons -->
+    <div class="bottom-btns">
+        <button class="btn btn-primary">Finalize & Save</button>
+    </div>
+  </main>
+
+  <script>
+    document.querySelector("button[type='submit']").addEventListener("click", () => {
+		setTimeout(() => {
+			document.querySelector(".notify").style.visibility = "visible";
+		}, 3000);
+		document.querySelector(".notify").style.visibility = "hidden";
+	})
+  </script>
+
+  <%- include("partials/footer.ejs") %>
+</body>
+</html>

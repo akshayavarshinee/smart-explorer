@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="/style.css" rel = "stylesheet">
+</head>
+<body class="auth-page">
+    <div class = "container">
+        <div>
+            <h2 class = "product-name ubuntu-bold"><img id = "product-logo" src="./images/compass.png"> Smart Explorer</h2>
+            <h2 class = "ubuntu-medium">Welcome Explorer!</h2>
+            <p class="ubuntu-light" style = "font-size: 14px;">Sign in to continue with your adventure</p>
+        </div>
+        <p class = "errors"><%= typeof err !== 'undefined' ? err : '' %></p>
+        <p class="errors"><%= typeof passwordErr !== 'undefined' ? passwordErr : '' %></p>
+        <form action ="/sign-up" method="POST">
+            <label class = "ubuntu-medium" for="username" style = "font-size: 13px;">Username</label>
+            <input type = "text" name = "username" placeholder="Enter your username" autofocus autocomplete="off">
+
+            <label class = "ubuntu-medium" for="email" style = "font-size: 13px;">Email</label>
+            <input type = "text" name = "email" placeholder="Enter your email" autocomplete="off">
+            
+
+            <label class = "ubuntu-medium"for="password" style = "font-size: 13px;">Password</label>
+            <input type = "password" name = "password" placeholder="Enter your password">
+            
+            
+            <button class = "ubuntu-medium" type = "submit" class = "submit">Sign Up</button>
+        </form>
+        <p style = "font-size: 12px; text-align: center;" class = "ubuntu-light">or</p>
+        <button class = "google-sign-in"><img id = "google-logo" src = "./images/google-logo.png"> Sign up with Google</button>
+        <a class="switch ubuntu-light" href = "/log-in" class = "ubuntu-light">Have an account? Log in</a>
+    </div>
+    <!-- <script>
+        document.querySelector('form').addEventListener("submit", function(event) {
+            const password = document.querySelector('input[type="password"]').value;
+            if(password.length < 8){
+                alert("Your password should be greater than 8 characters");
+                event.preventDefault();
+            }
+        });
+    </script> -->
+</body>
+</html>

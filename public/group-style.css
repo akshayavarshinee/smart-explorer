@@ -1,0 +1,176 @@
+:root {
+  --primary: #10877d;
+  --primary-dark: #0c6059;
+  --light: #f8f9fb;
+  --text: #333;
+  --gray: #6c757d;
+  --radius: 8px;
+  --shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 99vh;
+  margin: 0;
+  font-family: 'Ubuntu', Arial, sans-serif;
+  background: var(--light);
+  color: var(--text);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+
+/* Invite Friends */
+.invite {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.invite input {
+  flex: 1;
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-link {
+  background: none;
+  color: var(--primary);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tab {
+  padding: 6px 14px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+.tab:hover { background: #f5f5f5; }
+
+.tab--active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Itinerary List */
+.itinerary {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.itinerary__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background: #fafafa;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+}
+
+.itinerary__details strong {
+  display: block;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-left: 6px;
+  background: #eee;
+}
+
+.added-by {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vote-btn {
+  border: none;
+  background: var(--primary);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.vote-btn--inactive {
+  background: #ccc;
+  color: #333;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Bottom Button */
+.bottom-btns {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.notify{
+  visibility: hidden;
+  font-size: 10px;
+}
