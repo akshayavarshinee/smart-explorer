@@ -129,6 +129,18 @@ dist
 
 # Docusaurus cache and generated files
 .docusaurus
+# Node.js
+node_modules/
+.env
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Other
+.DS_Store
 
 # Serverless directories
 .serverless/
@@ -161,3 +173,4 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 >>>>>>> 1389005439de918cebf584f290516f278629af9f
+apirequest.txt

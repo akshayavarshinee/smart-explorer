@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/header-footer.css">
+    <link rel="stylesheet" href="/group-style.css">
+    <link rel="stylesheet" href="/group_list.css">
+    <title>Smart Explorer</title>
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+    <main class="container">
+        <section class="card">
+            <h3>Create a group</h3>
+            <form action="/group" method="post" class="invite">
+                <label for="group_name">Group Name</label>
+                <input type="text" placeholder="Enter your group name" required name="group_name">
+                <button type="submit" class="btn btn-primary create-group">Create</button>
+                <div class="invite-message">
+                <% if (typeof status !== "undefined" && status) { %>
+                    <p class="sub-text status-msg"><%= status %></p>
+                <% } %>
+                </div>
+            </form>
+                
+        </section>
+
+        <section class="card">
+        <h3>Groups</h3>
+        <% if (locals.groups && groups.length > 0) { %>
+            <ul class="member-list">
+            <% groups.forEach(group => { %>
+                <li class="member-item">
+                <a href="/group/<%= group.group_name %>">
+                    <div class="member-name"><%= group.group_name %></div>
+                </a>
+                <div class="member-email">Created by: <%= group.created_by_email %></div>
+                </li>
+            <% }) %>
+            </ul>
+        <% } else { %>
+            <div>You are not a member of any groups. Create a group to plan your vacation with your friends and family!</div>
+        <% } %>
+        </section>
+
+    </main>
+    <%- include("partials/footer.ejs") %>
+
+</body>
+</html>

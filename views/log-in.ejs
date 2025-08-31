@@ -7,33 +7,71 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link href="./style.css" rel = "stylesheet">
+    <link href="/style.css" rel="stylesheet">
 </head>
 <body class="auth-page">
-    <div class = "container">
+    <div class="container">
         <div>
-            <h2 class = "product-name ubuntu-bold"><img id = "product-logo" src="./images/compass.png"> Smart Explorer</h2>
-            <h2 class = "ubuntu-medium">Welcome Back</h2>
-            <p class="ubuntu-light" style = "font-size: 14px;">Log in to continue with your adventure</p>
+            <h2 class="product-name ubuntu-bold"><img id="product-logo" src="/images/compass.png"> Smart Explorer</h2>
+            <h2 class="ubuntu-medium">Welcome Back</h2>
+            <p class="ubuntu-light" style="font-size: 14px;">Log in to continue with your adventure</p>
         </div>
-        <p class="errors"><% if (error && error.length > 0) { %>
+
+        <!-- Flash error (from connect-flash) -->
+        <p class="errors">
+            <% if (typeof error !== 'undefined' && error && error.length > 0) { %>
                 <%= error[0] %>
-                <% } %>
+            <% } %>
         </p>
-        <form action="/log-in" method = "POST">
-            <label class = "ubuntu-medium" for="email" style = "font-size: 13px;">Email</label>
-            <input type = "text" name = "email" placeholder="Enter your email" autofocus autocomplete="off">
 
-            <label class = "ubuntu-medium"for="password" style = "font-size: 13px;">Password</label>
-            <input type = "password" name = "password" placeholder="Enter your password">
+        <!-- Invite banner -->
+        <% if (typeof inviteEmail !== 'undefined' && inviteEmail && typeof inviteGroupId !== 'undefined' && inviteGroupId) { %>
+            <div class="alert alert-info" style="margin-bottom: 12px;">
+                You were invited to join a group. Please log in with: <strong><%= inviteEmail %></strong>
+            </div>
+        <% } %>
 
-            
-            <button class = "ubuntu-medium" type = "submit" class = "submit">Log In</button>
+        <form action="/log-in" method="POST">
+            <!-- Hidden fields to carry invite data into POST body -->
+            <% if (typeof inviteGroupId !== 'undefined' && inviteGroupId) { %>
+                <input type="hidden" name="group_id" value="<%= inviteGroupId %>">
+            <% } %>
+            <% if (typeof inviteEmail !== 'undefined' && inviteEmail) { %>
+                <input type="hidden" name="invite_email" value="<%= inviteEmail %>">
+            <% } %>
+
+            <label class="ubuntu-medium" for="email" style="font-size: 13px;">Email</label>
+            <input
+                type="text"
+                name="email"
+                placeholder="Enter your email"
+                autofocus
+                autocomplete="off"
+                <% if (typeof inviteEmail !== 'undefined' && inviteEmail) { %>
+                    value="<%= inviteEmail %>"
+                    readonly
+                    style="background-color:#f0f0f0"
+                <% } %>
+            >
+
+            <label class="ubuntu-medium" for="password" style="font-size: 13px;">Password</label>
+            <input type="password" name="password" placeholder="Enter your password">
+
+            <button class="ubuntu-medium" type="submit" class="submit">Log In</button>
         </form>
-        <p style = "font-size: 12px; text-align: center;" class = "ubuntu-light">or</p>
-        <button class = "google-sign-in"><img id = "google-logo" src = "./images/google-logo.png"> Continue with Google</button>
-        <a class = "switch ubuntu-light" href = "/sign-up" class = "ubuntu-light">Don't have an account? Sign up</a>
+
+        <!-- <p style="font-size: 12px; text-align: center;" class="ubuntu-light">or</p>
+        <button class="google-sign-in"><img id="google-logo" src="/images/google-logo.png"> Continue with Google</button> -->
+
+        <!-- Preserve invite params when switching to sign-up -->
+        <a class="switch ubuntu-light"
+           href="<% if (typeof inviteGroupId !== 'undefined' && inviteGroupId && typeof inviteEmail !== 'undefined' && inviteEmail) { %>
+                    /sign-up?group_id=<%= inviteGroupId %>&email=<%= encodeURIComponent(inviteEmail) %>
+                 <% } else { %>
+                    /sign-up
+                 <% } %>">
+            Don't have an account? Sign up
+        </a>
     </div>
-    
 </body>
 </html>

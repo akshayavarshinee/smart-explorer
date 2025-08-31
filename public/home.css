@@ -79,22 +79,27 @@ main {
 
 
 .action-buttons a:hover, .interests a:hover{
-	color:#087368
+	color:#087368 !important;
 }
 
 .action-buttons a:visited {
-	color: #333
+	color: #333 !important;
 }
 
 .interests a:visited{
-	color:white
+	color:white !important;
 }
 
 .action-buttons a:active, .interests a:active{
-	color: #087368
+	color: #087368 !important;
 }
 
 .calendar{
   height: 30px;
   width:30px;
+}
+
+.bottom-btns{
+    display: flex;
+    justify-content: flex-end;
 }

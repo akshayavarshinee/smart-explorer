@@ -113,7 +113,7 @@ label{
   margin-bottom: 0;
 }
 
-input[type = "text"], input[type = "password"]{
+input[type = "text"], input[type = "email"], input[type = "password"]{
     border: none;
     background-color: #eff2f7;
     padding: 10px;

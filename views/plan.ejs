@@ -28,15 +28,15 @@
 
 			<!-- Trip Dates -->
 			<section class="card">
-				<h2>Trip Dates</h2>
+				<h2>Budget</h2>
 				<div class="date-container">
 					<div>
-						<label for="checkin">Check-in Date</label>
-						<input type="date" id="checkin" name = "checkin" required>
+						<label for="min_price">Minimum price: </label>
+						<input type="text" id="min_price" name = "min_price" required placeholder="Choose a value between 1 to 4">
 					</div>
 					<div>
-						<label for="checkout">Check-out Date</label>
-						<input type="date" id="checkout" name = "checkout" required>
+						<label for="max_price">Maximum price: </label>
+						<input type="text" id="max_price" name = "max_price" required placeholder="Choose a value between 1 to 4">
 					</div>
 				</div>
 			</section>
@@ -44,11 +44,11 @@
 			<!-- Search Radius -->
 			<section class="card">
 				<h2>Search Radius</h2>
-				<input type="range" min="1" max="20" value="5" class="slider" name = "radius" required>
+				<input type="range" min="1" max="50" value="5" class="slider" name = "radius" required>
 				<div class="range-labels">
 					<span>1 km</span>
 					<span>5 km</span>
-					<span>20 km</span>
+					<span>50 km</span>
 				</div>
 				<p class="hint">How far are you willing to travel from your accommodation?</p>
 			</section>
@@ -59,23 +59,40 @@
 				<p class="hint">Select your preferences to get personalized recommendations</p>
 				
 				<div class="choose tags">
-					<input type="text" class="interests" name="custom-interest" placeholder="Enter any other interests in your mind">
+					<select name="custom-interest" class="interests custom-interest">
+						<option value="">-- Select a Custom Interest --</option>
+						<% Object.keys(map).forEach(function(category) { %>
+							<option value="<%= category %>"><%= category %></option>
+						<% }); %>
+					</select>
+					<br/>
+					<!-- Hidden input to hold selected popular interests -->
 					<input type="hidden" name="selected-interests" id="selected-interests">
-					<input type ="button" value ="Food & Dining">
-					<input type ="button" value ="Nature & Parks">
-					<input type ="button" value ="History & Culture">
-					<input type ="button" value ="Museums">
-					<input type ="button" value ="Shopping">
-					<input type ="button" value ="Nightlife">
-					<input type ="button" value ="Adventure Sports">
-					<input type ="button" value ="Photography">
-					<input type ="button" value ="Architecture">
-					<input type ="button" value ="Local Markets">
-					<input type ="button" value ="Art Galleries">
-					<input type ="button" value ="Music & Entertainment">
+
+					<!-- Popular Interests Buttons -->
+					<% 
+					const popular = [
+						"Arts and Entertainment",
+						"Museum",
+						"Park",
+						"Night Club",
+						"Beach",
+						"Historic Site",
+						"Theater",
+						"Zoo",
+						"Shopping",
+						"Music & Entertainment"
+					]; 
+					%>
+					<% popular.forEach(function(category) { %>
+						<% if (map[category]) { %>
+							<input type="button" value="<%= category %>">
+						<% } %>
+					<% }); %>
 				</div>
-				<h5 id = "selected-display" style="visibility: hidden;">You have selected</h5>
-				<div class = "selected tags" ></div>
+
+				<h5 id="selected-display" style="visibility: hidden;">You have selected</h5>
+				<div class="selected tags"></div>
 			</section>
 
 			<!-- Buttons -->

@@ -147,3 +147,12 @@ input[name="custom-interest"]{
   background-color: #087368;
 }
 
+
+.custom-interest{
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
